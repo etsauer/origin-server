@@ -69,7 +69,7 @@ Endpoints:
     Backend: ''
     Options:
       health: true
-Install-Build-Required: false
+Install-Build-Required: true
 Version-Overrides:
   '0.6':
     Display-Name: Node.js 0.6
