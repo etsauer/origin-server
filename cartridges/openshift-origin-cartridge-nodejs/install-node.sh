@@ -16,7 +16,7 @@ for i in "$@"
 do
   case $i in
     -r=*|--registry=*)
-      npm_opts="--registry ${i#*=} ${npm_opts}"
+      npm_opts="--registry=${i#*=} ${npm_opts}"
       shift;;
     -b=*|--binary-tarball=*)
       tarfile="${i#*=}"
