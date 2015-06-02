@@ -16,6 +16,7 @@ for i in "$@"
 do
   case $i in
     -r=*|--registry=*)
+      registryUrl="${i#*=}"
       npm_opts="--registry=${i#*=} ${npm_opts}"
       shift;;
     -b=*|--binary-tarball=*)
@@ -71,6 +72,11 @@ Check the following files for misinformation:
   - ${OPENSHIFT_PATH_ELEMENT}
   - ${PROFILE_D_NODEJS}"
   exit 1
+fi
+
+# Configure NPM
+if [ -z ${registryUrl} ]; then
+  npm config set registry ${registryUrl} -g
 fi
 
 # Install Modules
