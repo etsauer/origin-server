@@ -75,7 +75,7 @@ Check the following files for misinformation:
 fi
 
 # Configure NPM
-if [ -z ${registryUrl} ]; then
+if [ -n ${registryUrl} ]; then
   npm config set registry ${registryUrl} -g
 fi
 
